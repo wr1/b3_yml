@@ -113,3 +113,34 @@ mesh:
         element_size: 0.05
       - id: 1
         element_size: 0.10
+
+matdb:
+  carbon:
+    id: 1
+  glass:
+    id: 2
+  foam:
+    id: 3
+
+laminates:
+  datums:
+    thickness_taper:
+      base: z
+      values: [[-101, 0.0], [-100, 0.008], [-30, 0.008],[-8,0.0]]
+
+  plies:
+    - mat: carbon
+      angle: 0
+      thickness: thickness_taper
+      parent: plate
+      conditions:
+        - field: z
+          operator: in_range
+          operand: [-1e3, 1e3]
+        - field: abs_dist_web1_hp0
+          operator: in_range
+          operand: [0, 0.4]
+        - field: panel_id
+          operator: in_range
+          operand: [1,12]
+      key: 100
