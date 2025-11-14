@@ -127,8 +127,17 @@ laminates:
     thickness_taper:
       base: z
       values: [[-101, 0.0], [-100, 0.008], [-30, 0.008],[-8,0.0]]
+    glass_taper:
+      base: z
+      values: [[-200, 0.004], [-20, 0.008], [-3, 0.02],[0,0.1]]
 
   plies:
+    - mat: glass
+      angle: 0
+      thickness: glass_taper * 0.6
+      parent: plate
+      conditions: []
+      key: 99
     - mat: carbon
       angle: 0
       thickness: thickness_taper
@@ -144,3 +153,12 @@ laminates:
           operator: in_range
           operand: [1,12]
       key: 100
+    - mat: glass
+      angle: 0
+      thickness: glass_taper
+      parent: plate
+      conditions: []
+      key: 102
+
+
+ 
