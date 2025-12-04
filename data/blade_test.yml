@@ -4,7 +4,6 @@ geometry:
   planform:
     npchord: 200
     npspan: 200
-    pre_rotation: 90
     # offset in prebend direction, negative is upwind
     dx: [[0.0, 0.0], [0.2, 0.0], [0.4, 0.0], [1.0, -5.0]]
     # offset in chord direction
