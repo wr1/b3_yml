@@ -3,7 +3,6 @@ workdir: temp_blade
 geometry:
   planform:
     npchord: 200
-    npspan: 200
     # offset in prebend direction, negative is upwind
     dx: [[0.0, 0.0], [0.2, 0.0], [0.4, 0.0], [1.0, -5.0]]
     # offset in chord direction
@@ -104,7 +103,8 @@ mesh:
       
   chordwise:
     default:
-      n_elem: 40  # number of elements per panel where panel between 2 hard points, hard points being the start or end of the airfoil line, or a web intersection
+      # number of elements per panel where panel between 2 hard points, hard points being the start or end of the airfoil line, or a web intersection
+      n_elem: 40  
       element_size: 0.10
     panels:
       - id: 0
@@ -141,15 +141,15 @@ laminates:
       thickness: thickness_taper
       parent: plate
       conditions:
-        - field: z
-          operator: in_range
-          operand: [-1e3, 1e3]
-        - field: abs_dist_web1_hp0
-          operator: in_range
-          operand: [0, 0.4]
-        - field: panel_id
-          operator: in_range
-          operand: [1,12]
+      - field: z
+        operator: in_range
+        operand: [-1e3, 1e3]
+      - field: abs_dist_web1_hp0
+        operator: in_range
+        operand: [0, 0.4]
+      - field: panel_id
+        operator: in_range
+        operand: [1,12]
       key: 100
     - mat: glass
       angle: 0
