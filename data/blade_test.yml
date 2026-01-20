@@ -88,7 +88,7 @@ structure:
     - name: web2
       type: plane
       origin: [0, -0.2, 0]
-      orientation: [0.02, 1, 0]
+      orientation: [0.02, 1, 0.001]
       z_range: [1, 100]
       element_size: 0.10
       mesh: true
@@ -143,7 +143,7 @@ laminates:
   datums:
     thickness_taper:
       base: z
-      values: [[5,0],[30,0.008], [100,0.008], [101,0.0]]
+      values: [[5,0],[30,0.008], [100,0.008], [141,0.008]]
       # [[-101, 0.0], [-100, 0.008], [-30, 0.008],[-8,0.0]]
     glass_taper:
       base: z
