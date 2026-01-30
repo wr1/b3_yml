@@ -76,21 +76,21 @@ structure:
       origin: [0, 0, 0]
       orientation: [0.02, 1, 0]
       z_range: [1,100]
-      element_size: 0.10
+      n_elem: 20
       mesh: false
     - name: web1
       type: plane
       origin: [0, 0.2, 0]
       orientation: [0.02, 1, 0]
       z_range: [1, 110]
-      element_size: 0.10
+      n_elem: 30
       mesh: true
     - name: web2
       type: plane
       origin: [0, -0.2, 0]
       orientation: [0.02, 1, 0.001]
       z_range: [1, 100]
-      element_size: 0.10
+      n_elem: 20
       mesh: true
 
 mesh:
@@ -100,12 +100,10 @@ mesh:
     - type: "linspace"
       values: [3,100]
       num: 50
-      
   chordwise:
     default:
       # number of elements per panel where panel between 2 hard points, hard points being the start or end of the airfoil line, or a web intersection
       n_elem: 40  
-      element_size: 0.10
     panels:
       - id: 0
         element_size: 0.05
