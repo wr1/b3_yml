@@ -11,11 +11,11 @@ echo "\n=== git commits ===" >> out.txt
 
 # pyproject.toml
 git add pyproject.toml
-git commit pyproject.toml -m 'chore: add pytest config and cov to b3-yml' || true
+git commit pyproject.toml -m 'chore: disable logfire pytest plugin to fix env conflicts' || true
 
 # README.md
 git add README.md
-git commit README.md -m 'docs: document testing workflow' || true
+git commit README.md -m 'docs: document pytest with logfire fix' || true
 
 # tests/__init__.py
 git add tests/__init__.py
@@ -27,7 +27,7 @@ git commit tests/test_datasets.py -m 'test: add smoke tests for data helpers and
 
 # admin.sh (self-update)
 git add admin.sh
-git commit admin.sh -m 'chore: update admin.sh for new test files' || true
+git commit admin.sh -m 'chore: update admin.sh for logfire fix' || true
 
 echo "\n=== pytest ===" >> out.txt
 uv run pytest -v >> out.txt 2>&1 || true
