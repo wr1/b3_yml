@@ -11,11 +11,11 @@ echo "\n=== git commits ===" >> out.txt
 
 # pyproject.toml
 git add pyproject.toml
-git commit pyproject.toml -m 'chore: disable logfire pytest plugin to fix env conflicts' || true
+git commit pyproject.toml -m 'chore: add src-layout fixes (pythonpath + hatch sources) for pytest' || true
 
 # README.md
 git add README.md
-git commit README.md -m 'docs: document pytest with logfire fix' || true
+git commit README.md -m 'docs: explain src-layout pytest fix' || true
 
 # tests/__init__.py
 git add tests/__init__.py
@@ -27,9 +27,10 @@ git commit tests/test_datasets.py -m 'test: add smoke tests for data helpers and
 
 # admin.sh (self-update)
 git add admin.sh
-git commit admin.sh -m 'chore: update admin.sh for logfire fix' || true
+git commit admin.sh -m 'chore: update admin.sh for src-layout pytest fix' || true
 
-echo "\n=== pytest ===" >> out.txt
+echo "\n=== pytest (fresh editable install) ===" >> out.txt
+uv pip install -e ".[dev]" >> out.txt 2>&1
 uv run pytest -v >> out.txt 2>&1 || true
 
 echo "\nadmin.sh finished – see out.txt" | tee -a out.txt

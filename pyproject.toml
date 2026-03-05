@@ -23,6 +23,10 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/b3_yml"]
 
+[tool.hatch.build]
+sources = ["src"]   # critical for src-layout editable installs
+
 [tool.pytest.ini_options]
 addopts = "--cov=b3_yml --cov-report=term-missing -q -p no:logfire"
 python_files = ["test_*.py"]
+pythonpath = ["src"]   # fixes ModuleNotFoundError in tests/ for src-layout

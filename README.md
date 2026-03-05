@@ -17,9 +17,9 @@ config = load_yaml("blade_test")
 
 ## Testing
 ```bash
-uv run pytest          # runs with coverage + logfire plugin disabled (fixes common env issues)
-uv run pytest -v       # verbose output
-uv run pytest --cov    # coverage only
+uv run pytest          # clean run (uses pythonpath + src-layout fix)
+uv run pytest -v
+uv run pytest --cov
 ```
 
-The `-p no:logfire` flag in the config automatically disables any stray `logfire` pytest plugin (common when mixing conda + uv).
+**Note**: The `pythonpath = ["src"]` + `sources = ["src"]` config fixes the common `ModuleNotFoundError: No module named 'b3_yml'` when running tests with `uv run pytest` in src-layout packages.
