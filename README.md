@@ -1,25 +1,24 @@
-# Blade Configuration Project
+# b3-yml
 
-This project contains configuration files for blade design, particularly for wind turbine blades.
+Reusable YAML blade configurations, airfoils and polars for the b3m wind-turbine blade framework.
 
-## blade_test.yml
+## Installation
+```bash
+uv pip install -e ".[dev]"
+```
 
-The `data/blade_test.yml` file defines the parameters for a blade test configuration.
+## Usage
+```python
+from b3_yml import prepare_dataset, load_yaml, get_path
 
-### Sections:
+# Recommended for tests/examples
+yml_path = prepare_dataset("blade_test")
+config = load_yaml("blade_test")
+```
 
-- **workdir**: Working directory for the simulation.
-
-- **geometry**: Defines the blade's geometric properties.
-  - **planform**: Includes npchord, npspan, pre_rotation, dx, dy, z, chord, thickness, twist.
-  - **airfoils**: List of airfoils with path, name, thickness.
-
-- **bem**: Blade Element Momentum parameters like rated_power, polars, B, rho, etc.
-
-- **structure**: Structural elements like webs.
-
-- **mesh**: Meshing parameters.
-
-- **matdb**: Material database.
-
-- **laminates**: Laminate definitions.
+## Testing
+```bash
+uv run pytest -v
+# with coverage
+uv run pytest --cov
+```
