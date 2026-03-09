@@ -1,8 +1,0 @@
-INFO:b3_2d.core.mesh_processing:58: Starting processing section 31
-INFO:b3_2d.core.mesh_processing:102: AirfoilMesh created with 3 skins and 3 webs
-INFO:b3_2d.core.mesh_processing:106: Mesh generation completed, result type: <class 'cgfoil.models.mesh_result.MeshResult'>
-INFO:b3_2d.core.mesh_processing:109: VTK file saved to /home/wr1/projects/b3/b3_yml/src/b3_yml/data/temp_ribbon/b3_2d/section_31/output.vtk
-INFO:b3_2d.core.mesh_processing:112: Loaded VTK: 380 cells, 268 points
-INFO:b3_2d.core.mesh_processing:117: Unique material_ids in VTK: [1 2]
-INFO:b3_2d.core.mesh_processing:128: Exported ANBA JSON to /home/wr1/projects/b3/b3_yml/src/b3_yml/data/temp_ribbon/b3_2d/section_31/anba.json
-INFO:b3_2d.core.mesh_processing:129: Completed section 31
